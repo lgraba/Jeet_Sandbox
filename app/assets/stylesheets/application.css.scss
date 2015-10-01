@@ -1,0 +1,12 @@
+@import 'jeet/jeet';
+@include j-edit;
+
+section {
+	@include j-center;
+}
+aside {
+	@include j-column(1/3);
+}
+article {
+	@include j-column(2/3);
+}
