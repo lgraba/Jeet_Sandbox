@@ -3,29 +3,46 @@
 @import "breakpoint";
 
 $small: 500px;
-$medium: 500px 800px;
+$medium: 500px 1400px;
 $large: 800px;
+
+html {
+	background-color: orange;
+}
+#wrapper {
+	background-color: white;
+}
 
 section {
 	@include j-center(100%);
+}
 
+aside {
+	@include j-column(1/10);
 	@include breakpoint($small) {
 		background-color: red;
 	}
 	@include breakpoint($medium) {
 		background-color: blue;
+		@include j-column(3/10);
 	}
 	@include breakpoint($large) {
 		background-color: green;
 	}
 }
 
-aside {
-	@include j-column(1/10);
-}
-
 article {
 	@include j-column(9/10);
+	@include breakpoint($small) {
+		background-color: red;
+	}
+	@include breakpoint($medium) {
+		background-color: blue;
+		@include j-column(7/10);
+	}
+	@include breakpoint($large) {
+		background-color: green;
+	}
 	img {
 		@include j-column(1/2 9/10, 0, 2);
 	}
